@@ -2,7 +2,7 @@ d3.csv('astronautas.csv', d3.autoType).then(data => { // levantamos el archivo d
   console.log(data) // transforma el csv en una lista de objetos. 
 
   // Guardamos el svg generado en la variable chart
-  let chart = Plot.plot({ //plot.plot genera la visualización. Es un SVG 
+  let chart2 = Plot.plot({ //plot.plot genera la visualización. Es un SVG 
     // svg = elemento vectorial y lo guardamos en la variable llamada chart
     marks: [ // aca elegimos la marca punto para representar cada entidad
       Plot.dot(data, { // elegimos un punto para representar cada pais
@@ -26,5 +26,5 @@ d3.csv('astronautas.csv', d3.autoType).then(data => { // levantamos el archivo d
   })
 
   // Agregamos chart al div#chart de index.html
-  d3.select('#chart').append(() => chart) 
+  d3.select('#chart2').append(() => chart2) 
 })
