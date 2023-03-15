@@ -17,7 +17,7 @@ function createChart(data){
         x2: d => d3.max( data.filter( dat => dat.anio_mision == d.anio_mision), (d) => d.mision_hs), // si ponemos eva cambia bastante
         y:"anio_mision",
         //inverse: true,
-        fill:"#0077b6"
+        fill:"#0077b6",
       }) 
     ],
     y:{

@@ -21,7 +21,7 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
     color: {
       legend: true,
       nice: true,
-      scheme: "Category 10", // blues, inferno, magma
+      scheme: "blues", // blues, inferno, magma, turbo, viridis
     },
     marginLeft: 100,
     width:1150,
