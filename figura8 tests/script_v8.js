@@ -1,34 +1,31 @@
 d3.csv('astronautas.csv', d3.autoType).then(data => {
-  // Sort the data array in ascending order based on mision_hs
-  data.sort((a, b) => a.mision_hs - b.mision_hs);
-
-  const colorScheme = ['#ffffff', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd',
-                     '#000000', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf'];
-
+  // group the data by category and calculate the sum of values for each category
+  const groupedData = d3.rollup(
+    data,
+    v => d3.sum(v, d => d.mision_hs),
+    d => d.category
+  );
+  // create a new array of objects with the data in the desired order
+  const sortedData = Array.from(groupedData, ([category, value]) => ({ category, value })).sort((a, b) => d3.ascending(a.value, b.value));
   let chart = Plot.plot({
     marks: [
-      Plot.barY(data, {
-        x: 'nacionalidad',
-        y: 'mision_hs',
-        fill: 'nacionalidad',
-        color: {scheme: colorScheme},
-        title: d =>  d.nombre + "\n" + d.status + "\n" + "Mision Hours: " + d.mision_hs,
-      }),
+      Plot.barX(sortedData, {
+        x: 'mision_hs',
+        y: 'nacionalidad',
+        //fill: 'color',
+      })
     ],
-    y: {
-      line: true,
-    },
     x: {
-      line: true,
-      nice: true,
+      grid: true,
+      label: 'Value',
     },
-    color: {
-      legend: true,
-      nice: true,
+    y: {
+      grid: true,
+      label: 'Category',
     },
-    marginLeft: 100,
-    width:1150,
-    height: 800,
-  })
-  d3.select('#chart').append(() => chart)
-})
+    width: 800,
+    height: 500,
+    title: 'Horizontal Bar Chart Example',
+  });
+  d3.select('#chart').append(() => chart);
+});

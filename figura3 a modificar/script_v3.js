@@ -13,14 +13,16 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
     marks: [
       Plot.dot(data, { 
         // quiero hacer un año mision y mujeres
-        x: "anio_mision",
+        x: "anio_nacimiento",
         y: "nacionalidad",
         fill: "genero",
-        //fillOpacity: 1,
-
-        //title: "country",
+        r: "mision_hs",
+        fillOpacity: 0.5,
+        title: d => d.nombre + "\n" + d.status,
       }),
     ],
+    color: {
+      range: ["red", "blue"],},
   });
   d3.select("#chart").append(() => chart);
 });
