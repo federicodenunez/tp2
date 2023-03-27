@@ -5,7 +5,7 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
 function createChart(data) {
   let rusia = data.filter(d => d.nacionalidad === "U.S.S.R/Rusia")
   let eeuu = data.filter(d => d.nacionalidad === "EE.UU.")
-  let suma_eeuu = d => sum(d.eva_mision_hs)
+  let suma_eeuu = d => d3.sum(d => d.eva_mision_hs)
 
   let italia = data.filter(d => d.nacionalidad === "Italia")
   let francia = data.filter(d => d.nacionalidad === "Francia")
