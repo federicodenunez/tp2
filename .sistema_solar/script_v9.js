@@ -4,13 +4,24 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
 
 function createChart(data) {
   let rusia = data.filter(d => d.nacionalidad === "U.S.S.R/Rusia")
+  let suma_rusia = d3.sum(rusia, d => d.eva_mision_hs)
+
   let eeuu = data.filter(d => d.nacionalidad === "EE.UU.")
-  let suma_eeuu = d => d3.sum(d => d.eva_mision_hs)
+  let suma_eeuu = d3.sum(eeuu, d => d.eva_mision_hs)
 
   let italia = data.filter(d => d.nacionalidad === "Italia")
+  let suma_italia = d3.sum(italia, d => d.eva_mision_hs)
+
   let francia = data.filter(d => d.nacionalidad === "Francia")
+  let suma_francia = d3.sum(francia, d => d.eva_mision_hs)
+
   let japon = data.filter(d => d.nacionalidad === "Japon")
+  let suma_japon = d3.sum(japon, d => d.eva_mision_hs)
+
   let uk = data.filter(d => d.nacionalidad === "Reino Unido")
+  let suma_uk = d3.sum(uk, d => d.eva_mision_hs)
+
+
   let chart = Plot.plot({
     height: 200,
     line: true,
@@ -23,7 +34,7 @@ function createChart(data) {
         r: d => d.eva_mision_hs,
         fill: "#a59186", //bcafb2 o a59186
         //suma_eeuu
-        title: d => "eva_mision_hs: " + suma_eeuu
+        title: d => "eva_mision_hs: " + suma_rusia
       }),
       Plot.dot(eeuu, {
         // Sol
@@ -36,25 +47,25 @@ function createChart(data) {
         x: "nacionalidad",
         r: d => d.eva_mision_hs,
         fill: "#f1c232",
-        title: d => "eva_mision_hs: " + d.eva_mision_hs
+        title: d => "eva_mision_hs: " + suma_italia
       }),
       Plot.dot(francia, {
         x: "nacionalidad",
         r: d => d.eva_mision_hs,
         fill: "#c7c7c7",
-        title: d => "eva_mision_hs: " + d.eva_mision_hs
+        title: d => "eva_mision_hs: " + suma_francia
       }),
       Plot.dot(japon, {
         x: "nacionalidad",
         r: d => d.eva_mision_hs,
         fill: "#66cc66",
-        title: d => "eva_mision_hs: " + d.eva_mision_hs
+        title: d => "eva_mision_hs: " + suma_japon
       }),
       Plot.dot(uk, {
         x: "nacionalidad",
         r: d => d.eva_mision_hs,
         fill: "#e06666",
-        title: d => "eva_mision_hs: " + d.eva_mision_hs
+        title: d => "eva_mision_hs: " + suma_uk
       }),
     ],
     r: {
@@ -69,7 +80,6 @@ function createChart(data) {
       background: "#000124",
       padding: "0px",
       color: "white",
-      marginBottom: 100, // no cambia nada
     },
     x: {
       label: "",
@@ -78,6 +88,8 @@ function createChart(data) {
   });
   d3.select("#chart").append(() => chart);
 }
+
+// Titulo: Horas de mision extra vehiculares por país
 
 /* Para agregar una dimension mas
 podemos usar los colores o el eje y 

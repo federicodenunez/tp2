@@ -17,16 +17,18 @@ d3.csv("astronautas.csv", d3.autoType).then((data) => {
     marks: [
       Plot.dot(data, { 
         x: "anio_mision", 
-        y: "anio_nacimiento",
+        y: "age_at_mission",
         fill: "white",
         stroke: "white",
+        r: 1.7,
+        title: d =>  d.nombre + "\n" + d.status + "\n" + "Mision Hours: " + d.mision_hs,
       }),
       Plot.line(age_line_data, {
         x: "anio_mision",
         y: "age_at_mission",
         stroke: "white",
         strokeWidth: 2,
-        strokeDasharray: "2,2"
+        opacity: 0.8,
       })
     ],  
     x: {
@@ -37,11 +39,7 @@ d3.csv("astronautas.csv", d3.autoType).then((data) => {
     y: {
       nice: true,
       line: true,
-      domain: [1950, 1985],
-    },
-    color: {
-      type: "diverging",
-      scheme: "BuRd",
+      domain: [30, 65],
     },
     style: {
       background: "#000124",
@@ -50,22 +48,24 @@ d3.csv("astronautas.csv", d3.autoType).then((data) => {
     },
   });
 
-  d3.select("#chart").append(() => chart);
+  d3.select("#chart2").append(() => chart);
 });
 
 
-
-
-
-  // Podemos ver la evolucion de la edad 
-  // quiza en clase podemos poner una curva que pase por la media de cada 
-  // mision_año.
-  /*La idea es hacer una media de edad que pase por todos los años y que sea una linea blanca
-  Hay que hacer mucho enfasis en la linea
-  porque los circulos no comunican nada
-
+  /*
+  Baja prioridad:
+  podríamos poner un filtro de militares y civiles o de USA y RUSIA solo  
   Hay un problema muestra los numeros con una coma
+  Asi hacemos que sea interactivo y que cambie la curva tmb
+  
+  Alta prioridad:
+  cambiar la linea media por una mediana para que haga curvas suaves
+  titulo: Evoluciond e la edad de los astronautas en la ultima decada
+
+  Alta prioridad:
   muestra 2,010 en vez de 2010
+  cheatcsheet: escalas 
+  dice como configurar los numeros
   */ 
 
   

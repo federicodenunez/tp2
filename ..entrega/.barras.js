@@ -13,8 +13,8 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
         Plot.barX(data, {
           x: 'mision_hs',
           y: 'nacionalidad',
-          fill: d => (d.nacionalidad == "EE.UU." || d.nacionalidad == "U.S.S.R/Rusia" ? "#09005f" : "#DBECF3"), // C8E7F4,DBECF3, 07068A
-          title: d =>  d.nombre + "\n" + d.status + "\n" + "Mision Hours: " + d.mision_hs,
+          fill: d => (d.nacionalidad == "EE.UU." || d.nacionalidad == "U.S.S.R/Rusia" ? "#FC3838" : "#DBECF3"), // FC3838
+          title: d =>  d.nombre + "\n" + d.status + "\n" + "Mision Hours: " + d.mision_hs, 
           order: (a, b) => d3.descending(a.mision_hs, b.mision_hs),
           sort: {y: "x", reverse: true},
         }),
@@ -23,23 +23,29 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
         line: true,
         sort: true,
         nice: true,
-        label: "País",
+        label: "",
       },
       x: {
         line: true,
         nice: true,
-        label: "Total de horas de misión ->",
+        label: "Horas de misión",
+        // centrar el label
+        // cambiar el domain para añadir mas valores en el eje x
       },
       color: {
         legend: true,
         nice: true,
-        //scheme: "blues",  blues, inferno, magma, turbo, viridis
-        //range:["blue","cyan"],
       },
       marginLeft: 100,
       width:500,
       height: 400,
+      style: {
+        background: "#000124",
+        padding: "0px",
+      color: "white",
+      }
     })
-    d3.select('#chart').append(() => chart)
+    d3.select('#chart1').append(() => chart)
   }
-/*Hacer una funcion que ponga a los que tienen mas horas mas al fondo*/
+
+  // Titulo: diferencia entre estados unidos y rusia con el resto del mundo
