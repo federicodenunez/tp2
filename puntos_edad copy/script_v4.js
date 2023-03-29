@@ -1,17 +1,9 @@
 d3.csv("astronautas.csv", d3.autoType).then((data) => {
-  // Calculate age of each astronaut at the time of their mission
-  data.forEach(d => {
-    d.age_at_mission = d.anio_mision - d.anio_nacimiento;
-  });
-
-  // Calculate the average age of astronauts
-  let avg_age = d3.mean(data, d => d.age_at_mission);
-
-  // Calculate the data for the age line
-  let age_line_data = [
-    { anio_mision: d3.min(data, d => d.anio_mision), age_at_mission: avg_age },
-    { anio_mision: d3.max(data, d => d.anio_mision), age_at_mission: avg_age }
-  ];
+  // Calculate the average age of astronauts for each year of their missions
+  let avg_ages_by_year = d3.rollup(data, 
+    v => d3.mean(v, d => d.anio_mision - d.anio_nacimiento), 
+    d => d.anio_mision
+  );
 
   let chart = Plot.plot({
     marks: [
@@ -20,23 +12,28 @@ d3.csv("astronautas.csv", d3.autoType).then((data) => {
         y: "anio_nacimiento",
         fill: "white",
         stroke: "white",
+        size: 20,
       }),
-      Plot.line(age_line_data, {
+      Plot.line(Array.from(avg_ages_by_year, ([anio_mision, age]) => ({anio_mision, age})), {
         x: "anio_mision",
-        y: "age_at_mission",
+        y: "age",
         stroke: "white",
         strokeWidth: 2,
-        strokeDasharray: "2,2"
-      })
+        opacity: 0.5,
+      }),
     ],  
     x: {
+      grid: false,
       line: true,
+      zero: false,
       nice: true,
-      domain: [2009, 2020],
+      fill: "white",
     },
     y: {
+      zero: false,
       nice: true,
       line: true,
+      grid: false,
       domain: [1950, 1985],
     },
     color: {
@@ -52,6 +49,7 @@ d3.csv("astronautas.csv", d3.autoType).then((data) => {
 
   d3.select("#chart").append(() => chart);
 });
+
 
 
 
