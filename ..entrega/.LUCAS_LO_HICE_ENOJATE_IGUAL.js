@@ -14,7 +14,8 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
         Plot.barY(Array.from(yearCounts, ([year, count]) => ({ year, count })), {
           x: "year", // switched x and y
           y: "count",
-          reverse: true
+          reverse: true,
+          width: 0.5, // no cambia nada
         }),
       ],
       x: {
@@ -22,6 +23,8 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
         sort: true,
         nice: true,
         label: "", 
+        tickFormat: d3.format("d"), // Set the tick label format to remove comma separator
+        tickValues: d3.range(2009, 2019), // Set the tick values to an array of years
       },
       style: {
         background: "#000124",
@@ -32,6 +35,7 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
         label: "Astronautas en misión",
         domain: [0, d3.max(Array.from(yearCounts, ([year, count]) => count))] // changed y domain to use the maximum count
       },
+      
     });
     
     d3.select("#chart4").append(() => chart);
