@@ -59,7 +59,7 @@ d3.csv("astronautas.csv", d3.autoType).then((data) => {
     },
   });
 
-  d3.select("#chart2").append(() => chart);
+  d3.select("#chartf1").append(() => chart);
 });
 
 
