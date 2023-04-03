@@ -53,7 +53,7 @@ function createChart(data) {
     
   });
   
-  d3.select("#chart4").append(() => chart);
+  d3.select("#chart3").append(() => chart);
 }
 
 

@@ -45,7 +45,7 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
       color: "white",
       }
     })
-    d3.select('#chart1').append(() => chart)
+    d3.select('#chart2').append(() => chart)
   }
 
   // Titulo: diferencia entre estados unidos y rusia con el resto del mundo
