@@ -15,7 +15,8 @@ function createChart(data) {
         y: "count",
         reverse: true,
         width: 0.5,
-        fill: d => (d.year == "2010" || d.year == "2019" ? "#6BFEFF" : "white"), // #DBECF3
+        color: "white",
+        //fill: d => (d.year == "2010" || d.year == "2019" ? "#6BFEFF" : "white"), // #DBECF3
         opacity: 0.9, 
       }),
       Plot.text(Array.from(yearCounts, ([year, count]) => ({ year, count })), {
@@ -47,9 +48,7 @@ function createChart(data) {
       labelOffset: 30, 
       // queda mejor sin el domain     
       //domain: [0, d3.max(Array.from(yearCounts, ([year, count]) => count))],
-      grid: false, // remove ticks from y axis
-      tickVisible: false,
-      noTicks: true,
+      ticks: false,
     },
     
   });
