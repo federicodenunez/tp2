@@ -15,8 +15,8 @@ function createChart(data) {
         y: "count",
         reverse: true,
         width: 0.5,
-        fill: d => (d.anio_mision == "2010" || d.anio_mision == "2019" ? "white" : "red"),
-        opacity: 0.3 
+        fill: d => (d.year == "2010" || d.year == "2019" ? "#6BFEFF" : "white"), // #DBECF3
+        opacity: 0.9, 
       }),
       Plot.text(Array.from(yearCounts, ([year, count]) => ({ year, count })), {
         x: "year",
@@ -25,10 +25,10 @@ function createChart(data) {
         color: "white", 
         align: "center",
         baseline: "bottom",
-        font: "bold 12 px sans-serif" // adjust font size
+        font: "bold 20px sans-serif" // adjust font size
       }),
     ],
-    insetTop: 17,
+    //insetTop: 17,
     x: {
       line: false, // hide x axis line
       sort: true,
@@ -44,14 +44,19 @@ function createChart(data) {
     },
     y: {
       label: "Astronautas en misión",
-      labelOffset: 20,
-      domain: [0, d3.max(Array.from(yearCounts, ([year, count]) => count))],
-      noTicks: true // remove ticks from y axis
+      labelOffset: 30, 
+      // queda mejor sin el domain     
+      //domain: [0, d3.max(Array.from(yearCounts, ([year, count]) => count))],
+      grid: false, // remove ticks from y axis
+      tickVisible: false,
+      noTicks: true,
     },
+    
   });
   
-  d3.select("#chartf3").append(() => chart);
+  d3.select("#chart4").append(() => chart);
 }
+
 
 
 

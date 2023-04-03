@@ -13,7 +13,7 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
         Plot.barX(data, {
           x: 'mision_hs',
           y: 'nacionalidad',
-          fill: d => (d.nacionalidad == "EE.UU." || d.nacionalidad == "U.S.S.R/Rusia" ? "#FC3838" : "#DBECF3"), // FC3838
+          fill: d => (d.nacionalidad == "EE.UU." || d.nacionalidad == "U.S.S.R/Rusia" ? "#6BFEFF" : "white"), // #DBECF3
           title: d =>  d.nombre + "\n" + d.status + "\n" + "Mision Hours: " + d.mision_hs, 
           order: (a, b) => d3.descending(a.mision_hs, b.mision_hs),
           sort: {y: "x", reverse: true},
@@ -45,7 +45,7 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
       color: "white",
       }
     })
-    d3.select('#chartf2').append(() => chart)
+    d3.select('#chart1').append(() => chart)
   }
 
   // Titulo: diferencia entre estados unidos y rusia con el resto del mundo
