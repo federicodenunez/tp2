@@ -2,6 +2,7 @@
 
 body {
   background-color: #000124;
+  text-align: center;
 }
 
 * {
@@ -58,5 +59,50 @@ a:nth-child(7) {
   border-color: #ffffff;
 }
 
+.btn-volver {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #ffffff;
+  color: #000124;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border: 2px solid #000124;
+  border-color: #fff;
+}
 
+.btn-volver:hover {
+  background-color: #000124;
+  color: #ffffff;
+  border-color: #fff;
+}
 
+.btn-volver:focus {
+  outline: none;
+  border-color: #fff;
+}
+
+.btn-volver:active {
+  transform: translateY(1px);
+  border-color: #fff;
+}
+
+.button-container{
+  text-align: center;
+}
+
+.btn-volver-container {
+  text-align: left;
+}
+
+.plot-container {
+  text-align: center;
+}
+
+#index-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
