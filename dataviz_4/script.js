@@ -87,13 +87,3 @@ function createChart(data) {
   });
   d3.select("#chart4").append(() => chart);
 }
-
-// Titulo: Horas de mision extra vehiculares por país
-
-/* Para agregar una dimension mas
-podemos usar los colores o el eje y 
-y filtrar por el porcentaje de militares en los astronautas totales
-para eso hacemos militares / militares + civiles (astronautas)
-y esto define el color del planeta
-];*/
-// tmb en vez de colores podemos poner una foto el planeta para que sea mas evidente

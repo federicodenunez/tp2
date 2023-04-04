@@ -35,7 +35,7 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
         legend: true,
         nice: true,
       },
-      marginLeft: 100,
+      marginLeft: 83,
       //width:1000,
       height: 400,
       style: {
