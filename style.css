@@ -12,28 +12,36 @@ body {
 
 p {
   font-size: 16px;
-  line-height: 1;
+  line-height: 1;  
+  margin-top: 200;
+  margin-bottom: 35px;
 } 
   
 .titulo {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
-  margin-bottom: 0px;
+  margin-bottom: -90px;
 }
 
 .titulo_principal {
   font-size: 36px;
   font-weight: bold;
-  margin-bottom: -17px;
+  text-decoration: underline;
+  margin-bottom: -15px;
 }
 
 .subtitulo_principal {
   font-size: 26px;
   font-weight: semi;
+  margin-bottom: 27px;
 }
   
 /* Style the links as buttons */
-a {
+.btn {
+  margin-top: 20px;
+}
+
+.btn a {
   display: inline-block;
   padding: 10px 20px;
   background-color: #ffffff;
@@ -46,16 +54,16 @@ a {
 }
 
 /* Style each link with a different border color */
-a:nth-child(4) {
+.btn a:nth-child(4) {
   border-color: #ffffff;
 }
-a:nth-child(5) {
+.btn a:nth-child(5) {
   border-color: #ffffff;
 }
-a:nth-child(6) {
+.btn a:nth-child(6) {
   border-color: #ffffff;
 }
-a:nth-child(7) {
+.btn a:nth-child(7) {
   border-color: #ffffff;
 }
 
@@ -97,12 +105,10 @@ a:nth-child(7) {
 }
 
 .plot-container {
-  text-align: center;
-}
-
-#index-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
+
+
