@@ -4,7 +4,7 @@ DOCUMENTACIÓN TP2 – VISUALIZACIÓN DE DATOS
 Lucas Canda y Federico de Nuñez
 
 Para el primer Plot, filtramos la información del dataset, solo concentrándonos en los nueve países con más horas de misión en el espacio. Las marcas utilizadas son las barras horizontales que representan la cantidad de horas de misión de cada país. 
-Para los canales de esta visualización, utilizamos un color verde claro para resaltar las barras de Rusia y Estados Unidos. Elegimos este mismo verde porque es el mismo que utilizaremos para representar a la Tierra en el cuarto gráfico. 
+Para los canales de esta visualización, utilizamos un color verde claro para resaltar las barras de Rusia y Estados Unidos porque son ampliamente mayores a las del resto. Elegimos este mismo verde porque es el mismo que utilizaremos para representar a la Tierra en el cuarto gráfico. 
 El resto de los países los dejamos en blanco puesto que sirven solo para ser comparados con las barras de Rusia y Estados Unidos. Las barras se componen de pequeñas porciones que representan a cada astronauta. Tienen un tamaño determinado por la cantidad de horas en misión de cada astronauta en particular y están ordenadas en orden creciente, por lo que el astronauta con mayor cantidad de horas de cada país estará en el extremo de cada barra. 
 
 En el segundo Plot, creamos una transformación de la información para calcular la cantidad de astronautas en misión en cada año. La marca elegida para representar esta información fueron las barras verticales. Aparte, añadimos el valor de la suma de cada año arriba de las barras para que sea más fácil de visualizar que viendo una grilla de valores.
