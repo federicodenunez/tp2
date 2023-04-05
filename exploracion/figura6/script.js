@@ -15,13 +15,11 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
     x: {
       line: true,
       nice: true,
-      //fill: "blue"
       label: "",
       },
     color: {
       legend: true,
       nice: true,
-      //scheme: "reds", // un color
     },
     style:{
       background: "#FFD1B2",

@@ -16,23 +16,22 @@ function createChart(data) {
         reverse: true,
         width: 0.5,
         color: "white",
-        //fill: d => (d.year == "2010" || d.year == "2019" ? "#6BFEFF" : "white"), // #DBECF3
         opacity: 0.9, 
       }),
       Plot.text(Array.from(yearCounts, ([year, count]) => ({ year, count })), {
         x: "year",
-        y: d => d.count + 1, // adjust text position to be above bars
+        y: d => d.count + 1, // ajusta la posicion de los numeros
         text: d => d.count,
         color: "white", 
         align: "center",
         baseline: "bottom",
-        font: "bold sans-serif", // adjust font size
+        font: "bold sans-serif", 
         fontSize: 16,
       }),
     ],
-    //insetTop: 17,
+    
     x: {
-      line: false, // hide x axis line
+      line: false, 
       sort: true,
       nice: true,
       label: "", 

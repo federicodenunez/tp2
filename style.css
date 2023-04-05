@@ -1,4 +1,4 @@
-/* Estilos archivo externo  */
+/* Archivo externo de estilo para todos los html  */
 
 body {
   background-color: #000124;
@@ -35,8 +35,13 @@ p {
   font-weight: semi;
   margin-bottom: 27px;
 }
+
+p.fuente {
+  font-size: 14px;
+  margin-top: 20px;
+  margin-bottom: -10px;
+}
   
-/* Style the links as buttons */
 .btn {
   margin-top: 20px;
 }
@@ -53,7 +58,6 @@ p {
   border: 2px solid #000124;
 }
 
-/* Style each link with a different border color */
 .btn a:nth-child(4) {
   border-color: #ffffff;
 }
@@ -110,5 +114,14 @@ p {
   align-items: center;
   height: 100vh;
 }
+
+.fuente-container {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 
 

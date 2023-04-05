@@ -1,5 +1,5 @@
 d3.csv("astronautas.csv", d3.autoType).then((data) => {
-  let dataNA = data //.filter( d => d.country ===  "EE.UU." || d.country ===  "U.S.S.R/Rusia")
+  let dataNA = data 
   createChart(dataNA)
 });
 
@@ -16,7 +16,6 @@ function createChart(data){
         x1:  d => d3.min( data.filter( dat => dat.anio_mision == d.anio_mision), (d) => d.mision_hs),
         x2: d => d3.max( data.filter( dat => dat.anio_mision == d.anio_mision), (d) => d.mision_hs), // si ponemos eva cambia bastante
         y:"anio_mision",
-        //inverse: true,
         fill:"#0077b6",
       }) 
     ],

@@ -29,10 +29,9 @@ function createChart(data) {
     marks: [
       Plot.dot(rusia, {
         // Jupiter
-        //var data = document.querySelector("eva_mision_hs").data;
         x: "nacionalidad",
         r: d => suma_rusia,
-        fill: "#a59186", //bcafb2 o a59186
+        fill: "#a59186", 
         title: d => "Horas totales: " + suma_rusia
       }),
       Plot.dot(eeuu, {

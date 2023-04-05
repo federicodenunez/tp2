@@ -1,6 +1,7 @@
 d3.csv('astronautas.csv', d3.autoType).then(data => {
-  // Sort the data array in ascending order based on mision_hs
+  // Ordenamos los datos en orden creciente de horas mision
   data.sort((a, b) => a.mision_hs - b.mision_hs);
+  
   let dataNA = data.filter( d => d.nacionalidad ===  "China" || d.nacionalidad ===  "Paises Bajos" || 
   d.nacionalidad ===  "Reino Unido" || d.nacionalidad ===  "Alemania" || d.nacionalidad ===  "Francia" || 
   d.nacionalidad ===  "Italia" || d.nacionalidad ===  "Japon" || d.nacionalidad ===  "EE.UU." || d.nacionalidad ===  "U.S.S.R/Rusia")
@@ -35,7 +36,6 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
         nice: true,
       },
       marginLeft: 75,
-      //width:1000,
       height: 400,
       style: {
         background: "#000124",
