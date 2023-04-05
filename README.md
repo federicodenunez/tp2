@@ -1,5 +1,6 @@
 # tp2
 DOCUMENTACIÓN TP2 – VISUALIZACIÓN DE DATOS
+
 Lucas Canda y Federico de Nuñez
 
 Para el primer Plot, filtramos la información del dataset, solo concentrándonos en los nueve países con más horas de misión en el espacio. Las marcas utilizadas son las barras horizontales que representan la cantidad de horas de misión de cada país. 
