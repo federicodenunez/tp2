@@ -26,16 +26,15 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
         label: "",
       },
       x: {
-        line: true,
+        line: false,
         nice: true,
         label: "Horas de misión",
-
       },
       color: {
         legend: true,
         nice: true,
       },
-      marginLeft: 83,
+      marginLeft: 75,
       //width:1000,
       height: 400,
       style: {
@@ -44,6 +43,7 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
       color: "white",
       }
     })
+    
     d3.select('#chart2').append(() => chart)
   }
   
