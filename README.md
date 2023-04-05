@@ -42,7 +42,6 @@ de cada país.
 Tanto en las visualizaciones como en la página principal mantuvimos un azul cósmico como
 color de fondo para mantener una temática espacial. Utilizamos una tipología sans-serif por la
 uniformidad de las letras y siempre mantuvimos su color en blanco para mayor legibilidad
-
 contrastando con el fondo y acompañando al color que elegimos para las estrellas en
 el tercer gráfico.
 Los botones también siguen esta jerarquía de colores: al tener el mouse encima de un botón,
